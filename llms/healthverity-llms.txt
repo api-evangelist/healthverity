@@ -1,0 +1,37 @@
+# HealthVerity
+
+> HealthVerity is a United States life-sciences data platform (Philadelphia, PA) operating what it describes as the nation's largest real-world data (RWD) ecosystem - 150 billion-plus de-identified transactions across 330 million-plus U.S. patients from 75-plus data sources (medical and pharmacy claims, labs, and EHR, following its integration of Symphony Health). Products sit on the IPGE framework (Identity, Privacy, Governance, Exchange). HealthVerity is a gated, sales-led, HIPAA-aligned tokenization/de-identification company - it publishes no public developer portal, no FHIR CapabilityStatement, and no downloadable OpenAPI.
+
+## APIs
+
+- [HealthVerity Identity API](https://healthverity.com/identity-manager/): Gated, enterprise real-time de-identification API. Under the "sync on demand" modality, customers write records to the HealthVerity Identity API and records are processed in real time, replacing PII with a universal HealthVerity ID (HVID) while all PII remains with the data owner. No public reference documentation, base URL, or authentication scheme is published; access is via commercial/partner agreement.
+
+## Products
+
+- [Identity Manager](https://healthverity.com/identity-manager/): Privacy-safe probabilistic identity resolution replacing PII with a universal HealthVerity ID (HVID).
+- [Marketplace](https://healthverity.com/marketplace/): Verified real-world-data datasets across claims, labs, and EHR.
+- [IPGE approach](https://healthverity.com/ipge-approach/): The Identity, Privacy, Governance, Exchange framework underlying HealthVerity's products.
+
+## Security & Trust
+
+- [security.txt](https://healthverity.com/.well-known/security.txt): RFC 9116 security contact (security@healthverity.com).
+- [Vulnerability Disclosure Policy](https://healthverity.com/vulnerability-disclosure/): Coordinated disclosure with safe harbor; no paid bug bounty.
+- [Trust](https://healthverity.com/trust/): Privacy and de-identification posture (references NIST de-identification guidance).
+- [Privacy Policy](https://healthverity.com/privacy-policy/)
+- [Terms & Conditions](https://healthverity.com/terms-and-conditions/)
+
+## Docs & Resources
+
+- [Website](https://healthverity.com/)
+- [Resources](https://healthverity.com/resources/)
+- [Blog](https://blog.healthverity.com/)
+- [Careers](https://healthverity.com/careers/)
+- [Contact / Sales](https://healthverity.com/contact/)
+- [GitHub Organization](https://github.com/healthverity): Open-source utility/fork repos; no public API spec or SDK.
+- [LinkedIn](https://www.linkedin.com/company/healthverity)
+
+## Notes
+
+- No public OpenAPI/Swagger, GraphQL, MCP server, or AsyncAPI is published.
+- No FHIR server, `/metadata` CapabilityStatement, or SMART-on-FHIR configuration exists - HealthVerity is a RWD/tokenization platform, not an EHR/FHIR-network participant.
+- All products are accessed under commercial/partner agreements (request a demo, contact sales).

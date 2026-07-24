@@ -1,0 +1,23 @@
+generated: '2026-07-24'
+method: searched
+source: live probes of https://healthverity.com/.well-known/*
+host: https://healthverity.com
+documents:
+- path: /.well-known/security.txt          # RFC 9116
+  status: 200
+  file: healthverity-security.txt
+- path: /.well-known/openid-configuration   # OIDC discovery
+  status: 404
+- path: /.well-known/oauth-authorization-server  # RFC 8414
+  status: 404
+- path: /.well-known/api-catalog             # RFC 9727
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/smart-configuration     # SMART-on-FHIR
+  status: 404
+notes: >-
+  Only a RFC 9116 security.txt is published. No OIDC/OAuth discovery, no
+  api-catalog, no ai-plugin, and no SMART-on-FHIR configuration - consistent
+  with HealthVerity being a gated, sales-led RWD/de-identification platform
+  with no public developer portal or machine-readable API contract.

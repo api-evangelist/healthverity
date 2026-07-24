@@ -1,0 +1,18 @@
+generated: '2026-07-24'
+method: searched
+probe: false
+url: https://healthverity.com/trust/
+certifications: []
+certifications_note: >-
+  HealthVerity's public trust page centers on privacy and de-identification
+  and references NIST de-identification standards, but names no formal
+  third-party certification or attestation (no SOC 2, HITRUST, ISO 27001,
+  HIPAA, or FedRAMP badge is published on the trust page). HealthVerity
+  positions itself as HIPAA-aligned via expert-determination /
+  de-identification methodology rather than a named certification. No
+  Compliance pointer is emitted because no certification program is published.
+frameworks_referenced:
+- NIST de-identification guidance
+evidence:
+- source: https://healthverity.com/trust/
+  keywords: [privacy, security, de-identification, nist]

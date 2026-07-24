@@ -1,0 +1,8 @@
+# HealthVerity Security Contact Information
+# RFC 9116 Security.txt
+
+Contact: mailto:security@healthverity.com
+Policy: https://healthverity.com/vulnerability-disclosure/
+Canonical: https://healthverity.com/.well-known/security.txt
+Preferred-Languages: en
+Expires: 2027-07-21T00:00:00Z

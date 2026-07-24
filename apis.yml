@@ -83,6 +83,20 @@ common:
   url: https://healthverity.com/privacy-policy/
 - type: TermsOfService
   url: https://healthverity.com/terms-and-conditions/
+- type: SecurityTxt
+  url: well-known/healthverity-security.txt
+- type: WellKnown
+  url: well-known/healthverity-well-known.yml
+- type: DomainSecurity
+  url: security/healthverity-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/healthverity-vulnerability-disclosure.yml
+- type: Security
+  url: https://healthverity.com/vulnerability-disclosure/
+- type: TrustCenter
+  url: https://healthverity.com/trust/
+- type: LLMsTxt
+  url: llms/healthverity-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
