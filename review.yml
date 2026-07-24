@@ -1,0 +1,123 @@
+aid: healthverity
+name: HealthVerity
+review:
+  question: Does HealthVerity expose a public developer portal, a FHIR CapabilityStatement, or a downloadable OpenAPI?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+  homeMarket: United States
+findings:
+  summary: |
+    HealthVerity is a United States life-sciences real-world data (RWD)
+    platform - identity resolution, de-identification/tokenization, and a data
+    marketplace for pharma, payers, and government - not a standards-based
+    clinical interoperability vendor. It publishes NO public developer portal,
+    NO FHIR CapabilityStatement, and NO downloadable OpenAPI/Swagger. Every
+    candidate developer host failed to resolve or returned an error
+    (developer.healthverity.com, docs.healthverity.com, fhir.healthverity.com,
+    api.healthverity.com all DNS/connection-fail; healthverity.com/developers,
+    /api, /interoperability all 404). The only vendor-named programmatic
+    surface is the "HealthVerity Identity API" mentioned conceptually on the
+    Identity Manager product page ("Customers write to the HealthVerity
+    Identity API and records are processed in real time, with all PII remaining
+    with the data owner") under its "sync on demand" modality - but with no
+    reference docs, base URL, endpoints, auth details, or self-serve onboarding.
+    Access to all products is sales-/partner-gated (request a demo, contact
+    sales). Because HealthVerity is a RWD/tokenization company rather than an
+    EHR or FHIR-network participant, no US Core / SMART-on-FHIR / Da Vinci /
+    CARIN conformance applies. This is an honest identity-only, gated-API
+    result: a built-stub.
+  developerPortal:
+    url: ""
+    confirmed: false
+    note: No developer/docs/fhir/api subdomain resolves; /developers, /api, /interoperability all 404.
+  probedHosts:
+    - url: https://developer.healthverity.com
+      status: "000 (no DNS / connection failed)"
+    - url: https://docs.healthverity.com
+      status: "000 (no DNS / connection failed)"
+    - url: https://fhir.healthverity.com
+      status: "000 (no DNS / connection failed)"
+    - url: https://api.healthverity.com
+      status: "000 (no DNS / connection failed)"
+    - url: https://healthverity.com/developers
+      status: "404"
+    - url: https://healthverity.com/api
+      status: "404"
+    - url: https://healthverity.com/interoperability
+      status: "404"
+    - url: https://status.healthverity.com
+      status: "000 (no DNS / connection failed)"
+    - url: https://healthverity.com/identity-manager/
+      status: "200 (product page; names the HealthVerity Identity API, no reference docs)"
+    - url: https://healthverity.com/
+      status: "200"
+    - url: https://blog.healthverity.com
+      status: "200"
+    - url: https://github.com/healthverity
+      status: "200 (org has 9 open-source utility/fork repos - cantor, cassandra-loader, snakeskin-fabric, safeexec, ember-cli-react, datahub, pydruid, create-single-spa, safe-harbor-data-provider-tools; no API spec or SDK)"
+    - url: https://healthverity.com/privacy-policy/
+      status: "200"
+    - url: https://healthverity.com/terms-and-conditions/
+      status: "200"
+    - url: https://healthverity.com/contact/
+      status: "200"
+  fhirCapabilityStatement:
+    present: false
+    version: null
+    resources: []
+    note: HealthVerity does not operate a FHIR server; no /metadata CapabilityStatement or /.well-known/smart-configuration exists.
+  downloadableSpecs:
+    count: 0
+    provenance: none
+    note: No OpenAPI/Swagger/CapabilityStatement was found or harvested. openapi/ contains only a README stub explaining the absence.
+  authModel:
+    scheme: none-documented
+    smartOnFhir: false
+    note: >-
+      No public authentication documentation. The gated HealthVerity Identity
+      API and all data products are accessed under commercial/partner agreements
+      (sales-led). No SMART-on-FHIR scopes, OAuth2 client-credentials, API-key,
+      or mTLS scheme is publicly documented.
+  standardsConformance:
+    usCore: false
+    ukCore: false
+    auCore: false
+    daVinci: false
+    carin: false
+    note: Not applicable - HealthVerity is a RWD/de-identification/tokenization platform, not an EHR/FHIR-network or payer FHIR API.
+  gatedVsSelfServe: gated
+  homeMarket: United States
+  transports:
+    - protocol: REST
+      scheme: https
+      note: The HealthVerity Identity API is described as a real-time write interface but is gated with no documented base URL or endpoints.
+      documented: false
+    - protocol: FHIR
+      scheme: https
+      documented: false
+      note: No FHIR REST surface, base URL, or CapabilityStatement is documented.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented.
+sources:
+  - url: https://healthverity.com/
+    type: Website
+    note: Positioned as "the healthcare data platform built for breakthroughs" - a RWD ecosystem; directs users to request a demo / contact sales; no developer resources.
+  - url: https://healthverity.com/identity-manager/
+    type: Documentation
+    note: Names the HealthVerity Identity API under "sync on demand"; no reference docs, endpoints, or auth.
+  - url: https://healthverity.com/ipge-approach/
+    type: Documentation
+    note: IPGE framework (Identity, Privacy, Governance, Exchange); RWD ecosystem scale (150B+ transactions, 330M+ patients, 75+ sources).
+  - url: https://github.com/healthverity
+    type: GitHubOrganization
+    note: 9 open-source utility/fork repos; no public API specification or SDK.
+actions:
+  status: built-stub
+  reason: |
+    Identity captured with an honest, gated, undocumented programmatic surface.
+    No public developer portal, FHIR CapabilityStatement, or OpenAPI exists to
+    harvest, so none were fabricated. The single apis[] entry (HealthVerity
+    Identity API) is a real, vendor-named API pointed only at its product page.
