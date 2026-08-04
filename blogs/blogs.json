@@ -1,0 +1,21 @@
+{
+  "repo": "healthverity",
+  "feeds": [
+    {
+      "source": "https://healthverity.com/feed/",
+      "feed_url": "https://healthverity.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://healthverity.com/",
+      "feed_url": "https://healthverity.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-08-01T15:49:00Z"
+}
