@@ -47,7 +47,7 @@ tags:
 - HIPAA
 - Claims
 created: '2026-07-24'
-modified: '2026-07-24'
+modified: '2026-08-15'
 specificationVersion: '0.19'
 apis:
 - aid: healthverity:healthverity-identity-api
@@ -97,6 +97,47 @@ common:
   url: https://healthverity.com/trust/
 - type: LLMsTxt
   url: llms/healthverity-llms.txt
+- type: Login
+  url: https://marketplace.healthverity.com/
+- type: SignUp
+  url: https://healthverity.com/exos-demo/
+- type: Packages
+  url: packages/healthverity-packages.yml
+- type: Conformance
+  url: conformance/healthverity-conformance.yml
+- type: Lifecycle
+  url: lifecycle/healthverity-lifecycle.yml
+- type: Plans
+  url: plans/healthverity-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/healthverity-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-15'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    The vendor-named HealthVerity Identity API has no reference anywhere on the
+    public web - /api and /developers return 404, every api./docs./developer./
+    portal./platform. subdomain is NXDOMAIN, and the only route to it is the
+    identity-manager-request sales form; the single live application host,
+    marketplace.healthverity.com, 301s to /login/ and its robots.txt disallows
+    all crawling.
+  evidence:
+  - url: https://healthverity.com/api
+    status: 404
+  - url: https://healthverity.com/identity-manager-request/
+    status: 200
+  - url: https://marketplace.healthverity.com/
+    status: 301
+  - url: https://healthverity.com/openapi.json
+    status: 404
+  - url: https://healthverity.com/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-15'
