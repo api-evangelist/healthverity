@@ -1,0 +1,111 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  https://healthverity.com/trust/, /ipge-approach/, /identity-manager/,
+  /privacy-policy/, /research-agent/termsofuse/ and live /.well-known/ probes
+  (2026-08-15). No OpenAPI, AsyncAPI or GraphQL SDL exists in this repo, so
+  nothing below is derived from a spec.
+summary: >-
+  HealthVerity asserts a privacy and de-identification posture rather than an API
+  standards posture. It positions itself as HIPAA-aligned through expert
+  determination / de-identification methodology and references NIST de-identification
+  guidance, but names no third-party certification or attestation on any public page -
+  no SOC 2, HITRUST, ISO 27001 or FedRAMP badge is published, and a targeted search
+  found none. No API-level standard applies: there is no OAuth 2.0 or OIDC discovery
+  document, no FHIR server or CapabilityStatement, no SCIM, OData, JSON:API,
+  RFC 9457 problem+json, documented pagination or idempotency surface. Because no
+  certification program is published, NO `Compliance` pointer is emitted - consistent
+  with security/healthverity-trust-center.yml.
+standards:
+- id: oauth2
+  conforms: false
+  evidence: >-
+    /.well-known/oauth-authorization-server returns 404 on healthverity.com,
+    blog.healthverity.com and marketplace.healthverity.com; no OAuth flow is documented.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on every resolving host.
+- id: fhir
+  conforms: false
+  evidence: >-
+    No FHIR base URL, no /metadata CapabilityStatement, no
+    /.well-known/smart-configuration. HealthVerity is a real-world-data and
+    tokenization platform, not a FHIR server or EHR/FHIR-network participant.
+- id: smart-on-fhir
+  conforms: false
+  evidence: /.well-known/smart-configuration returns 404.
+- id: us-core
+  conforms: false
+  evidence: Not applicable - no FHIR surface exists to profile.
+- id: fapi
+  conforms: false
+  evidence: No OAuth surface, therefore no FAPI profile.
+- id: scim
+  conforms: false
+  evidence: No user-provisioning API is documented.
+- id: odata
+  conforms: false
+  evidence: No OData service document or $metadata endpoint.
+- id: json-api
+  conforms: false
+  evidence: No public API reference documents a media type.
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    No error catalog or problem+json envelope is published; no spec exists from
+    which to derive one.
+- id: rfc9116
+  conforms: true
+  evidence: >-
+    A valid RFC 9116 security.txt is served at
+    https://healthverity.com/.well-known/security.txt (HTTP 200), with Contact,
+    Policy, Canonical, Preferred-Languages and Expires. Saved verbatim at
+    well-known/healthverity-security.txt.
+- id: rfc9727
+  conforms: false
+  evidence: /.well-known/api-catalog returns 404 on every resolving host.
+- id: rfc8594
+  conforms: false
+  evidence: No deprecation or sunset policy is published; see lifecycle/.
+- id: pagination
+  conforms: false
+  evidence: Undocumented - no public API reference.
+- id: idempotency
+  conforms: false
+  evidence: >-
+    No idempotency key, header or retry semantics are documented anywhere. No
+    `Idempotency` pointer is emitted.
+- id: hipaa
+  conforms: partial
+  evidence: >-
+    HealthVerity markets itself as HIPAA-aligned and its whole product line is built
+    on HIPAA de-identification (expert determination producing the HealthVerity ID /
+    HVID, with PII remaining with the data owner). HIPAA is a regulatory regime, not a
+    certification: no third-party HIPAA attestation is published, so this is recorded
+    as `partial` - a claimed alignment, not a verified certificate.
+- id: nist-de-identification
+  conforms: partial
+  evidence: >-
+    The public trust page references NIST de-identification guidance
+    (NIST SP 800-188 family) as the methodological basis for HealthVerity's
+    de-identification. Referenced, not certified against.
+certifications_published: []
+certifications_note: >-
+  Searched healthverity.com/trust/, the privacy policy, the terms and conditions and
+  the wider web for SOC 2, HITRUST, ISO 27001 and FedRAMP. None is named on any
+  HealthVerity-controlled public page. For a HIPAA-regulated data vendor this is an
+  unusual gap and is the single highest-value public-trust artifact HealthVerity could
+  publish.
+evidence:
+- url: https://healthverity.com/trust/
+  status: 200
+  finding: privacy/de-identification narrative; no named certification or attestation
+- url: https://healthverity.com/.well-known/security.txt
+  status: 200
+  finding: valid RFC 9116 document
+- url: https://healthverity.com/.well-known/openid-configuration
+  status: 404
+- url: https://healthverity.com/.well-known/oauth-authorization-server
+  status: 404
+- url: https://healthverity.com/.well-known/api-catalog
+  status: 404

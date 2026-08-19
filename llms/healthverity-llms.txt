@@ -1,37 +1,52 @@
 # HealthVerity
 
-> HealthVerity is a United States life-sciences data platform (Philadelphia, PA) operating what it describes as the nation's largest real-world data (RWD) ecosystem - 150 billion-plus de-identified transactions across 330 million-plus U.S. patients from 75-plus data sources (medical and pharmacy claims, labs, and EHR, following its integration of Symphony Health). Products sit on the IPGE framework (Identity, Privacy, Governance, Exchange). HealthVerity is a gated, sales-led, HIPAA-aligned tokenization/de-identification company - it publishes no public developer portal, no FHIR CapabilityStatement, and no downloadable OpenAPI.
+> HealthVerity is a United States life-sciences data platform (Philadelphia, PA) operating what it describes as the nation's largest real-world data (RWD) ecosystem - 150 billion-plus de-identified transactions across 330 million-plus U.S. patients from 75-plus data sources (medical and pharmacy claims, labs, and EHR, following its acquisition of Symphony Health, completed 2026-05-08). Products sit on the IPGE framework (Identity, Privacy, Governance, Exchange). HealthVerity is a gated, sales-led, HIPAA-aligned tokenization/de-identification company - it publishes no public developer portal, no FHIR CapabilityStatement, and no downloadable OpenAPI.
 
 ## APIs
 
-- [HealthVerity Identity API](https://healthverity.com/identity-manager/): Gated, enterprise real-time de-identification API. Under the "sync on demand" modality, customers write records to the HealthVerity Identity API and records are processed in real time, replacing PII with a universal HealthVerity ID (HVID) while all PII remains with the data owner. No public reference documentation, base URL, or authentication scheme is published; access is via commercial/partner agreement.
+- [HealthVerity Identity API](https://healthverity.com/identity-manager/): Gated, enterprise real-time de-identification API. Under the "sync on demand" modality, customers write records to the HealthVerity Identity API and records are processed in real time, replacing PII with a universal HealthVerity ID (HVID) while all PII remains with the data owner. Activation is described as "a pre-configured java application or API". No public reference documentation, base URL, or authentication scheme is published; access is via commercial/partner agreement.
 
 ## Products
 
 - [Identity Manager](https://healthverity.com/identity-manager/): Privacy-safe probabilistic identity resolution replacing PII with a universal HealthVerity ID (HVID).
 - [Marketplace](https://healthverity.com/marketplace/): Verified real-world-data datasets across claims, labs, and EHR.
+- [eXOs](https://healthverity.com/exos/): Agentic-AI real-world-evidence "evidence studio" (powered by Medeloop), announced 2025-09-30. Turns natural-language research questions into cohort feasibility, epidemiology, comparative effectiveness, adherence, and time-to-event analyses. End-user platform only - no API, SDK, or MCP server.
+- [Governance Manager](https://healthverity.com/governance-manager/): Data governance across licensed RWD.
 - [IPGE approach](https://healthverity.com/ipge-approach/): The Identity, Privacy, Governance, Exchange framework underlying HealthVerity's products.
+
+## Access
+
+- [Customer sign-in portal](https://marketplace.healthverity.com/): The single application host for HealthVerity customers (Marketplace, eXOs). Login-gated; `robots.txt` disallows all crawling. No public API is exposed behind or in front of it.
+- [Request a demo](https://healthverity.com/request-demo-2/)
+- [eXOs demo / "Start for free"](https://healthverity.com/exos-demo)
+- [Identity Manager request](https://healthverity.com/identity-manager-request/)
+- [Integration contact](https://healthverity.com/integration-contact/)
 
 ## Security & Trust
 
-- [security.txt](https://healthverity.com/.well-known/security.txt): RFC 9116 security contact (security@healthverity.com).
+- [security.txt](https://healthverity.com/.well-known/security.txt): RFC 9116 security contact (security@healthverity.com); expires 2027-07-21.
 - [Vulnerability Disclosure Policy](https://healthverity.com/vulnerability-disclosure/): Coordinated disclosure with safe harbor; no paid bug bounty.
-- [Trust](https://healthverity.com/trust/): Privacy and de-identification posture (references NIST de-identification guidance).
+- [Trust](https://healthverity.com/trust/): Privacy and de-identification posture (references NIST de-identification guidance). No SOC 2, HITRUST, ISO 27001, or FedRAMP certification is named on any public page.
 - [Privacy Policy](https://healthverity.com/privacy-policy/)
 - [Terms & Conditions](https://healthverity.com/terms-and-conditions/)
+- [eXOs Terms of Use](https://healthverity.com/research-agent/termsofuse/): Grants access "exclusively within the Platform"; prohibits copying, extracting, exporting, or downloading Content.
 
 ## Docs & Resources
 
 - [Website](https://healthverity.com/)
 - [Resources](https://healthverity.com/resources/)
 - [Blog](https://blog.healthverity.com/)
+- [Channel partners](https://healthverity.com/channel-partners/): ~35 named delivery/analytics partners (Accenture, Deloitte, EY, IQVIA-adjacent CROs, Quest Diagnostics, Labcorp, LiveRamp, Medidata, Verily, CVS Health, Inovalon, Veradigm, and others).
 - [Careers](https://healthverity.com/careers/)
 - [Contact / Sales](https://healthverity.com/contact/)
-- [GitHub Organization](https://github.com/healthverity): Open-source utility/fork repos; no public API spec or SDK.
+- [GitHub Organization](https://github.com/healthverity): 9 open-source utility/fork repos (5 archived); no API spec and no API SDK.
 - [LinkedIn](https://www.linkedin.com/company/healthverity)
 
-## Notes
+## Notes for agents
 
-- No public OpenAPI/Swagger, GraphQL, MCP server, or AsyncAPI is published.
+- No public OpenAPI/Swagger, GraphQL SDL, MCP server, AsyncAPI, Postman collection, or A2A agent card is published. Verified 2026-08-15 across every resolving host.
+- `api.`, `docs.`, `developer.`, `app.`, `portal.`, `platform.`, `identity.`, `exos.`, `mcp.` and `status.` subdomains of healthverity.com do not resolve.
+- `symphonyhealth.com` (acquired) returns HTTP 200 with the same WordPress homepage for every path, including `/openapi.json` and `/.well-known/agent-card.json`. Those are soft-404s, not documents. Do not treat them as a discovery surface.
 - No FHIR server, `/metadata` CapabilityStatement, or SMART-on-FHIR configuration exists - HealthVerity is a RWD/tokenization platform, not an EHR/FHIR-network participant.
+- No published pricing, plans, quotas, rate limits, status page, changelog, versioning policy, or deprecation policy.
 - All products are accessed under commercial/partner agreements (request a demo, contact sales).

@@ -1,0 +1,45 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  HealthVerity product pages, the eXOs Terms of Use, and the full 210-URL page
+  sitemap (2026-08-15). No public API reference exists to read limits from.
+limit_count: 0
+headers_documented: false
+retry_after_documented: false
+exhaustion_status_code: null
+summary: >-
+  HealthVerity documents NO rate limits, quotas, burst allowances, throttling
+  behaviour or rate-limit response headers for any API. There is no public API
+  reference to read them from: the only vendor-named programmatic surface is the
+  gated HealthVerity Identity API, which is described conceptually on the Identity
+  Manager product page with no endpoints, no base URL, no authentication scheme and
+  no runtime semantics. The one throughput figure HealthVerity publishes is a
+  marketing capability claim, not a customer rate limit, and is recorded below as
+  such so it is never mistaken for a documented limit.
+limits: []
+capacity_claims:
+- claim: de-identifies up to 1 million records per second
+  source: https://healthverity.com/identity-manager/
+  is_a_rate_limit: false
+  note: >-
+    A platform throughput capability stated in product marketing. It is not a
+    per-key, per-account or per-endpoint limit, carries no window, no burst, no
+    header and no exhaustion status, and must not be scored as a published limit.
+- claim: HVIDs returned within milliseconds
+  source: https://healthverity.com/identity-manager/
+  is_a_rate_limit: false
+  note: A latency claim, not a rate limit.
+response_headers: []
+response_headers_note: >-
+  No X-RateLimit-*, RateLimit-* or Retry-After header is documented, and none could
+  be observed: there is no unauthenticated API endpoint to send a live request to.
+evidence:
+- url: https://healthverity.com/identity-manager/
+  status: 200
+  finding: names the HealthVerity Identity API; publishes no limits, headers or quotas
+- url: https://healthverity.com/research-agent/termsofuse/
+  status: 200
+  finding: eXOs Terms of Use contain no rate limit, quota or usage-cap term
+- url: https://healthverity.com/api
+  status: 404
+  finding: no API reference path exists on the corporate site

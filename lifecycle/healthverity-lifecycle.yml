@@ -1,0 +1,84 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  DNS + HTTP probes of status/changelog/roadmap hosts and paths, plus the full
+  210-URL page sitemap for healthverity.com (2026-08-15).
+summary: >-
+  HealthVerity publishes no API lifecycle surface of any kind. There is no status
+  page, no changelog or release notes, no versioning policy, no deprecation or
+  sunset policy, and no published SLA. This is consistent with there being no
+  public API contract to version in the first place: the HealthVerity Identity API
+  is gated and undocumented, and eXOs, Marketplace, FLOW and Governance Manager are
+  end-user platforms reached through marketplace.healthverity.com behind a login.
+  Every field below is a measured absence, not an unchecked field.
+versioning:
+  scheme: null
+  documented: false
+  current_version: null
+  note: No versioning scheme is published for any HealthVerity API.
+deprecation:
+  policy_documented: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  notice_period: null
+  deprecated_operations: []
+  note: >-
+    No deprecation or sunset policy is published and RFC 8594 Sunset/Deprecation
+    headers cannot be observed - there is no public endpoint to send a request to.
+    No `Deprecation` pointer is emitted in apis.yml.
+status_page:
+  present: false
+  url: null
+  machine_readable: false
+  note: >-
+    status.healthverity.com does not resolve (NXDOMAIN) and
+    https://healthverity.com/status/ returns 404. No Statuspage.io, Instatus,
+    Better Stack or equivalent tenant was found. No `StatusPage` pointer is emitted.
+changelog:
+  present: false
+  url: null
+  note: >-
+    https://healthverity.com/changelog/ returns 404 and no release-notes page
+    appears in the sitemap. The company blog (blog.healthverity.com) carries
+    corporate news and thought leadership, not dated product or API release notes.
+sla:
+  published: false
+  url: null
+  uptime_target: null
+  note: >-
+    No public SLA or uptime commitment. Service levels are negotiated inside the
+    commercial/partner agreement.
+support:
+  channel: email/contact form
+  url: https://healthverity.com/contact/
+  registries_support: https://healthverity.com/registries-support/
+corporate_lifecycle_events:
+  note: >-
+    Recorded from the company's own newsroom because they change the API surface
+    this repo tracks, even though they are not API lifecycle events.
+  events:
+  - date: '2026-05-05'
+    event: HealthVerity announced the acquisition of Symphony Health.
+    source: blogs/2026-05-05-healthverity-to-acquire-symphony-health-uniting-clinical.md
+  - date: '2026-05-08'
+    event: >-
+      HealthVerity completed the Symphony Health acquisition; symphonyhealth.com
+      still serves an independent WordPress site.
+    source: blogs/2026-05-08-healthverity-completes-acquisition-of-symphony-health.md
+  - date: '2025-09-30'
+    event: HealthVerity announced eXOs, its agentic real-world-evidence platform.
+    source: blogs/2025-09-30-announcing-healthverity-exos-accelerated-real-world.md
+evidence:
+- url: https://healthverity.com/status/
+  status: 404
+- url: https://healthverity.com/changelog/
+  status: 404
+- url: https://healthverity.com/roadmap/
+  status: 404
+- host: status.healthverity.com
+  status: NXDOMAIN
+- url: https://healthverity.com/page-sitemap.xml
+  status: 200
+  finding: 210 URLs; no status, changelog, release-notes, roadmap or SLA page

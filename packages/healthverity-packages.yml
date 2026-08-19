@@ -1,0 +1,102 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  Registry queries against pypi.org/pypi/<pkg>/json, registry.npmjs.org and
+  api.github.com/orgs/healthverity/repos (2026-08-15), plus the HealthVerity
+  website sitemap and product pages.
+api_client_sdk_count: 0
+summary: >-
+  HealthVerity publishes NO first-party client library for any HealthVerity API.
+  The gated HealthVerity Identity API has no SDK on npm, PyPI, Maven Central,
+  NuGet, RubyGems, crates.io, Packagist or pkg.go.dev. The github.com/healthverity
+  organization holds 9 repositories, all of which are general-purpose
+  infrastructure utilities or forks - none of them wrap a HealthVerity API. The
+  Identity Manager product page describes activation as "a pre-configured java
+  application or API", but that Java application is distributed under a
+  commercial/partner agreement and is not published to any public registry.
+  Because no official API client library exists, NO `SDKs` pointer is emitted in
+  apis.yml - only `Packages`, which records this measured absence.
+packages: []
+first_party_open_source:
+  note: >-
+    These are HealthVerity-authored or HealthVerity-forked open-source projects
+    found on the public registries. They are recorded for provenance only. None of
+    them is a client for a HealthVerity API, so none counts toward sdk_count and
+    none is marked as an API client.
+  entries:
+  - language: python
+    registry: pypi
+    name: snakeskin-fabric
+    url: https://pypi.org/project/snakeskin-fabric/
+    repository: https://github.com/healthverity/snakeskin-fabric
+    install: pip install snakeskin-fabric
+    author: HealthVerity
+    official: true
+    api_client: false
+    version: 0.1.1
+    published: '2019-08-20'
+    summary: An unofficial Python SDK for Hyperledger Fabric.
+    note: >-
+      First-party HealthVerity publication, but a Hyperledger Fabric client - not
+      a HealthVerity API client. Last released 2019-08-20; the GitHub repo was
+      last pushed 2026-04-13. Nearly seven years without a release is a strong
+      abandonment signal for the package as distributed.
+  - language: python
+    registry: pypi
+    name: pydruid
+    url: https://pypi.org/project/pydruid/
+    repository: https://github.com/druid-io/pydruid
+    author: Druid Developers
+    official: false
+    api_client: false
+    version: 0.6.9
+    published: '2024-05-16'
+    note: >-
+      Apache Druid connector forked into the HealthVerity GitHub org. Upstream is
+      druid-io/pydruid; HealthVerity is not the publisher. Recorded so the fork is
+      not mistaken for a first-party SDK.
+registries_checked:
+- registry: pypi
+  queries: [healthverity, healthverity-sdk, hv-api, snakeskin-fabric, pydruid]
+  first_party_api_clients: 0
+- registry: npm
+  queries: ['@healthverity/*', healthverity]
+  first_party_api_clients: 0
+- registry: maven-central
+  first_party_api_clients: 0
+- registry: nuget
+  first_party_api_clients: 0
+- registry: rubygems
+  first_party_api_clients: 0
+- registry: crates.io
+  first_party_api_clients: 0
+- registry: packagist
+  first_party_api_clients: 0
+- registry: pkg.go.dev
+  first_party_api_clients: 0
+github_organization:
+  url: https://github.com/healthverity
+  public_repo_count: 9
+  archived_count: 5
+  api_specs: 0
+  api_sdks: 0
+  repos:
+  - {name: datahub, language: TypeScript, archived: true, pushed: '2024-12-29', note: 'Fork of the DataHub metadata platform.'}
+  - {name: safe-harbor-data-provider-tools, language: Shell, archived: false, pushed: '2024-09-13', note: 'Shell tooling for Safe Harbor data providers; no API client.'}
+  - {name: snakeskin-fabric, language: Python, archived: false, pushed: '2026-04-13', note: 'Hyperledger Fabric SDK; published to PyPI.'}
+  - {name: create-single-spa, language: null, archived: false, pushed: '2024-12-29', note: 'Fork of the single-spa scaffolder.'}
+  - {name: pydruid, language: null, archived: false, pushed: '2021-10-07', note: 'Fork of the Apache Druid Python connector.'}
+  - {name: ember-cli-react, language: JavaScript, archived: true, pushed: '2020-07-21'}
+  - {name: cassandra-loader, language: Java, archived: true, pushed: '2019-02-28'}
+  - {name: safeexec, language: C, archived: true, pushed: '2018-10-28'}
+  - {name: cantor, language: Java, archived: true, pushed: '2018-02-12'}
+evidence:
+- url: https://api.github.com/orgs/healthverity/repos
+  status: 200
+  finding: 9 repos, 0 API specs, 0 API client SDKs
+- url: https://pypi.org/pypi/snakeskin-fabric/json
+  status: 200
+  finding: version 0.1.1, published 2019-08-20, author HealthVerity
+- url: https://pypi.org/pypi/healthverity/json
+  status: 404
+  finding: no HealthVerity API client on PyPI

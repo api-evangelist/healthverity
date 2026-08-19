@@ -1,0 +1,52 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  https://healthverity.com/sitemap_index.xml + page-sitemap.xml walked in full
+  (210 URLs), plus direct probes of /pricing/, /plans/ and the product pages
+  (2026-08-15).
+plan_count: 0
+currency: null
+model: sales-led
+summary: >-
+  HealthVerity publishes NO plans, tiers, list prices, quotas or overage rates.
+  https://healthverity.com/pricing/ returns 404, no pricing page appears anywhere
+  in the 210-URL page sitemap, and every product path terminates in a
+  "request a demo" / "contact sales" form (identity-manager-request,
+  exos-demo, healthverity-marketplace-overview-request, government-request,
+  life-sciences-request, integration-contact). This is an enterprise
+  contact-us motion by design: HealthVerity sells real-world-data licenses and
+  de-identification services to pharma, payers and government under negotiated
+  commercial agreements. plan_count is 0 because zero plans are published, not
+  because none were looked for.
+plans: []
+purchase_paths:
+- name: Request a demo
+  url: https://healthverity.com/request-demo-2/
+  type: sales-form
+- name: Identity Manager request
+  url: https://healthverity.com/identity-manager-request/
+  type: sales-form
+- name: eXOs demo ("Start for free")
+  url: https://healthverity.com/exos-demo
+  type: self-serve-trial-request
+  note: >-
+    The eXOs page advertises "Start for free" but the link lands on a demo/lead
+    form, not a self-serve checkout or a published plan.
+- name: Integration contact
+  url: https://healthverity.com/integration-contact/
+  type: sales-form
+third_party_listings:
+- name: SoftwareOne Marketplace - HealthVerity Identity Manager
+  url: https://platform.softwareone.com/product/healthverity-identity-manager/PCP-1612-0468
+  note: >-
+    A reseller marketplace listing exists, but it does not publish a HealthVerity
+    price, tier, quota or overage rate.
+evidence:
+- url: https://healthverity.com/pricing/
+  status: 404
+- url: https://healthverity.com/sitemap_index.xml
+  status: 200
+  finding: 3 child sitemaps; no pricing or plans URL in any of them
+- url: https://healthverity.com/exos-demo
+  status: 200
+  finding: '"Start for free" resolves to a demo request form, not a published plan'

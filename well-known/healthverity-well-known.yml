@@ -1,23 +1,86 @@
-generated: '2026-07-24'
+generated: '2026-08-15'
 method: searched
-source: live probes of https://healthverity.com/.well-known/*
+source: live probes of /.well-known/* on every resolving HealthVerity host
 host: https://healthverity.com
+hosts_probed:
+- healthverity.com
+- blog.healthverity.com
+- marketplace.healthverity.com
+- info.healthverity.com
 documents:
 - path: /.well-known/security.txt          # RFC 9116
+  host: healthverity.com
   status: 200
   file: healthverity-security.txt
 - path: /.well-known/openid-configuration   # OIDC discovery
+  host: healthverity.com
   status: 404
 - path: /.well-known/oauth-authorization-server  # RFC 8414
+  host: healthverity.com
+  status: 404
+- path: /.well-known/oauth-protected-resource    # RFC 9728
+  host: healthverity.com
   status: 404
 - path: /.well-known/api-catalog             # RFC 9727
+  host: healthverity.com
   status: 404
 - path: /.well-known/ai-plugin.json
+  host: healthverity.com
   status: 404
 - path: /.well-known/smart-configuration     # SMART-on-FHIR
+  host: healthverity.com
   status: 404
+- path: /.well-known/mcp.json
+  host: healthverity.com
+  status: 404
+- path: /.well-known/agent-card.json         # A2A 1.0.0
+  host: healthverity.com
+  status: 404
+- path: /.well-known/agent.json              # A2A pre-0.3 legacy
+  host: healthverity.com
+  status: 404
+- path: /.well-known/agent-card.json
+  host: marketplace.healthverity.com
+  status: 404
+- path: /.well-known/agent.json
+  host: marketplace.healthverity.com
+  status: 404
+- path: /.well-known/oauth-protected-resource
+  host: marketplace.healthverity.com
+  status: 404
+- path: /.well-known/openid-configuration
+  host: marketplace.healthverity.com
+  status: 404
+- path: /.well-known/mcp.json
+  host: marketplace.healthverity.com
+  status: 404
+- path: /.well-known/agent-card.json
+  host: blog.healthverity.com
+  status: 404
+- path: /.well-known/agent.json
+  host: blog.healthverity.com
+  status: 404
+- path: /.well-known/api-catalog
+  host: blog.healthverity.com
+  status: 404
+rejected_hits:
+  note: >-
+    symphonyhealth.com (acquired by HealthVerity 2026-05-08) answers HTTP 200 with
+    the same WordPress homepage HTML for EVERY path probed, including
+    /.well-known/agent-card.json, /openapi.json and /llms.txt. These are soft-404s,
+    not documents. They are recorded here so a future round does not mistake the
+    catch-all for a served discovery surface.
+  entries:
+  - host: symphonyhealth.com
+    paths: ['/.well-known/agent-card.json', '/.well-known/agent.json', '/.well-known/api-catalog', '/openapi.json', '/swagger.json', '/llms.txt']
+    status: 200
+    content_type: text/html; charset=UTF-8
+    verdict: soft-404 HTML catch-all - rejected
 notes: >-
-  Only a RFC 9116 security.txt is published. No OIDC/OAuth discovery, no
-  api-catalog, no ai-plugin, and no SMART-on-FHIR configuration - consistent
-  with HealthVerity being a gated, sales-led RWD/de-identification platform
-  with no public developer portal or machine-readable API contract.
+  Only a RFC 9116 security.txt is genuinely served, and only on the apex host. No
+  OIDC or OAuth discovery, no RFC 9727 api-catalog, no ai-plugin, no SMART-on-FHIR
+  configuration, no MCP manifest and no A2A agent card on any host - consistent with
+  HealthVerity being a gated, sales-led RWD/de-identification platform with no public
+  developer portal and no machine-readable API contract. The `WellKnown` pointer in
+  apis.yml is justified by the one real 200 (security.txt); every other row is a
+  recorded absence.

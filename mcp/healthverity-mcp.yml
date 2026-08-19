@@ -1,0 +1,64 @@
+generated: '2026-08-15'
+method: searched
+status: none
+source: >-
+  Live probes of every resolving HealthVerity host (2026-08-15) plus web search
+  for a HealthVerity MCP server or agent endpoint.
+summary: >-
+  HealthVerity ships NO Model Context Protocol server - neither a remote endpoint
+  nor a local stdio package. mcp.healthverity.com does not resolve;
+  /.well-known/mcp.json returns 404 on healthverity.com, blog.healthverity.com and
+  marketplace.healthverity.com; no @healthverity or healthverity-mcp package exists
+  on npm or PyPI; and no MCP server appears in any public MCP registry. HealthVerity
+  eXOs is an agentic-AI product, but it is an END-USER platform, not an agent
+  surface: its published Terms of Use grant only a "non-transferable,
+  non-assignable and non-exclusive sublicense to access the Content described in
+  the Order exclusively within the Platform" and state that "Customer will not copy,
+  extract, export or download any Content from the Platform" - the opposite of a
+  programmatic tool surface. No candidate tool list could be derived either, because
+  HealthVerity publishes no OpenAPI to derive operations from.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+  note: >-
+    mode is `none` because nobody ships a server. No endpoint URL is recorded -
+    guessing one would falsely assert a verified agent surface.
+tools: []
+tools_note: >-
+  No tools recorded. There is no MCP server to introspect and no OpenAPI in this
+  repo from which candidate tools could be derived. An empty list here is a
+  measurement, not a placeholder.
+probes:
+- url: https://healthverity.com/.well-known/mcp.json
+  status: 404
+- url: https://blog.healthverity.com/.well-known/mcp.json
+  status: 404
+- url: https://marketplace.healthverity.com/.well-known/mcp.json
+  status: 404
+- url: https://healthverity.com/.well-known/oauth-authorization-server
+  status: 404
+- url: https://healthverity.com/.well-known/oauth-protected-resource
+  status: 404
+- url: https://marketplace.healthverity.com/.well-known/oauth-protected-resource
+  status: 404
+- host: mcp.healthverity.com
+  status: NXDOMAIN
+- host: api.healthverity.com
+  status: NXDOMAIN
+evidence:
+- url: https://healthverity.com/exos/
+  status: 200
+  finding: >-
+    eXOs is described as an agentic-AI "evidence studio" accessed through a demo
+    signup or the marketplace.healthverity.com sign-in - no API, SDK, MCP server
+    or programmatic integration is mentioned anywhere on the page.
+- url: https://healthverity.com/research-agent/termsofuse/
+  status: 200
+  finding: >-
+    eXOs Terms of Use (product is "HealthVerity eXOs, powered by Medeloop") permit
+    access only within the Platform and prohibit export of Content. No API, rate
+    limit, or authentication term appears.
