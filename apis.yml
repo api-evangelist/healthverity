@@ -22,6 +22,17 @@ description: >-
   Identity API for real-time de-identification, described conceptually on the
   Identity Manager product page but without public reference documentation,
   base URL, or self-serve onboarding.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: sales
