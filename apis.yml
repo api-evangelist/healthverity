@@ -34,17 +34,19 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: paid
-  onboarding: sales
+  pricing: unknown
+  onboarding: approval
   trial: false
   try_now: false
   public: false
-  label: Enterprise · Sales-led (gated)
-  confidence: medium
+  label: Requires approval
+  confidence: low
   source:
-  - website
-  generated: '2026-07-24'
-  method: manual
+  - plans
+  - rate-limits
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Healthcare
