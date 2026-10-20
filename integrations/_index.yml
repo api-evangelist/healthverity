@@ -42,3 +42,30 @@
       latest_authorization: '2022-05-10'
   status: not-a-workflow
   arazzo: null
+- slug: healthverity-databricks-marketplace
+  label: Databricks Marketplace
+  partner: databricks
+  partner_name: Databricks Marketplace
+  category: data product listing
+  type: marketplace
+  marketplace: databricks-marketplace
+  channel: distribution
+  evidence: https://marketplace.databricks.com/provider/5e4eac82-02a6-4a4d-bbb2-76c748d58d92
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Databricks Marketplace (marketplace.databricks.com/api/2.0/public-marketplace-providers + public-marketplace-listings)
+    spec_file: null
+    role: data-marketplace-seller
+    registered_name: HealthVerity
+    matched_domain: healthverity.com
+    matched_by: domain
+    listings: 2
+    sample_listings:
+    - Claims Sample Patient Dataset
+    - Provider Diversity and Diagnosis Index
+    signal_note: 'participation: the provider lists data products on this marketplace; counts are context'
+    detected_by: sweep-data-marketplaces.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
