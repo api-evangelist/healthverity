@@ -1,4 +1,4 @@
-# HealthVerity (healthverity)
+# HealthVerity
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,55 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-HealthVerity is a United States life-sciences data platform (Philadelphia, PA) operating what it calls the nation's largest real-world data (RWD) ecosystem: 150 billion-plus de-identified transactions across 330 million-plus U.S. patients from 75-plus data sources (medical and pharmacy claims, labs, and EHR, following its integration of Symphony Health). Its products sit on the IPGE framework - Identity, Privacy, Governance, Exchange - and include HealthVerity Marketplace, Identity Manager and Census (privacy-safe identity resolution to a universal HealthVerity ID / HVID), Governance Manager, HealthVerity FLOW, and eXOs (an AI-native real-world-evidence agent).
+HealthVerity is a United States life-sciences data platform, headquartered in Philadelphia, Pennsylvania, that operates what it describes as the nation's largest real-world data (RWD) ecosystem - more than 150 billion de-identified transactions covering over 330 million U.S. patients across 75-plus data sources spanning medical and pharmacy claims, labs, and EHR (following its integration of Symphony Health). Its products are organized around the IPGE framework (Identity, Privacy, Governance, Exchange) and include HealthVerity Marketplace (verified RWD datasets), Identity Manager and Census (privacy-safe probabilistic identity resolution that replaces PII with a universal HealthVerity ID / HVID), Governance Manager, HealthVerity FLOW, and eXOs (an AI-native real-world-evidence agent). HealthVerity is a HIPAA-aligned, tokenization-and-de-identification company serving pharma, payers, and government - not a self-serve, standards-based clinical interoperability vendor. Unlike EHR and FHIR-network players, it exposes no public developer portal, no FHIR CapabilityStatement, and no downloadable OpenAPI; the only vendor-named programmatic surface is the gated, enterprise HealthVerity Identity API for real-time de-identification, described conceptually on the Identity Manager product page but without public reference documentation, base URL, or self-serve onboarding.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/healthverity/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/healthverity/refs/heads/main/apis.yml)
+**Areas:** Healthcare · United States · Life Sciences · Real-World Data · Identity Resolution · De-Identification · Tokenization · Data Marketplace · HIPAA · Claims
 
-## API Posture
+## HealthVerity on APIs.io
 
-HealthVerity is a RWD / tokenization / de-identification company, not a standards-based clinical interoperability vendor. As of this review it publishes **no public developer portal, no FHIR CapabilityStatement, and no downloadable OpenAPI**. The only vendor-named programmatic surface is the gated, enterprise **HealthVerity Identity API** for real-time de-identification, described conceptually on the Identity Manager product page but without public reference documentation, base URL, or self-serve onboarding. All products are accessed under commercial/partner agreements (request a demo, contact sales).
+Everything profiled for HealthVerity is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/healthverity/](https://apis.io/providers/healthverity/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Healthcare
-- United States
-- Life Sciences
-- Real-World Data
-- Identity Resolution
-- De-Identification
-- Tokenization
-- Data Marketplace
-- HIPAA
-- Claims
+- [HealthVerity Identity API](https://apis.io/apis/healthverity/healthverity-identity-api/) — Gated, enterprise real-time de-identification API named on the HealthVerity Identity Manager product page. Under the "sync on demand" modality, customers…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-24
-- **Modified:** 2026-07-24
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (3)
 
-### HealthVerity Identity API
+Authentication, trust centre, and vulnerability disclosure.
 
-Gated, enterprise real-time de-identification API named on the HealthVerity Identity Manager product page. Under the "sync on demand" modality, customers write records to the HealthVerity Identity API and records are processed in real time, replacing PII with a universal HealthVerity ID (HVID) while all PII remains with the data owner. No public reference documentation, base URL, or authentication details are published.
+- [Healthverity Domain Security](https://apis.io/security/healthverity/healthverity-domain-security/)
+- [Healthverity Trust Center](https://apis.io/security/healthverity/healthverity-trust-center/)
+- [Healthverity Vulnerability Disclosure](https://apis.io/security/healthverity/healthverity-vulnerability-disclosure/)
 
-- **Human URL:** [https://healthverity.com/identity-manager/](https://healthverity.com/identity-manager/)
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://healthverity.com/identity-manager/)
+- [Healthverity Plans Pricing](https://apis.io/plans/healthverity/healthverity-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
+
+Published request limits.
+
+- [Healthverity Rate Limits](https://apis.io/rate-limits/healthverity/healthverity-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://healthverity.com/)
-- [Blog](https://blog.healthverity.com/)
-- [GitHub Organization](https://github.com/healthverity)
-- [LinkedIn](https://www.linkedin.com/company/healthverity)
+- [Sign up](https://healthverity.com/exos-demo/)
 - [Support](https://healthverity.com/contact/)
-- [Privacy Policy](https://healthverity.com/privacy-policy/)
-- [Terms of Service](https://healthverity.com/terms-and-conditions/)
+- [Blog](https://blog.healthverity.com/)
+- [Security](https://healthverity.com/vulnerability-disclosure/)
+- [Trust centre](https://healthverity.com/trust/)
+- [Terms of service](https://healthverity.com/terms-and-conditions/)
+- [Privacy policy](https://healthverity.com/privacy-policy/)
+- [GitHub](https://github.com/healthverity)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 42.1 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 28.1** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/healthverity/](https://apis.io/providers/healthverity/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for HealthVerity: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/healthverity/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
